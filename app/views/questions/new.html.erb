@@ -1,0 +1,19 @@
+<% if @errors %>
+  <ul><% @errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %></ul>
+<% end %>
+
+<%= form_for Question.new do |f| %>
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title, :placeholder => "Enter a brief summary of your question" %></p>
+
+  <p><%= f.label :content %></p>
+  <p><%= f.text_area :content, :placeholder => "Enter your question here. " %></p>
+
+  <p><%= f.label :tags %></p>
+  <p>Enter tags separated by commas!</p>
+  <p><%= f.text_area :tags, :value => nil, :placeholder => "Tag your question here" %></p>
+
+  <%= f.submit "Publish" %>
+<% end %>
