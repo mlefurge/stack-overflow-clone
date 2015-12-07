@@ -2,26 +2,63 @@
 <html>
 <head>
   <title>StackOverflowClone</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1> Welcome to Stack Overflow Clone <h1>
-  </header>
-  <div class="nav_bar">
-    <% if logged_in? %>
-      <%= current_user.name %> | <%= link_to 'Signout', signout_path %>
-    <% else %>
-      <div class="login">
-        <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook"> Login with Facebook <span class="fa fa-facebook"></span> </a>
-        <a href="/auth/google_oauth2" class="btn btn-block btn-social btn-google"> Login with Google <span class="fa fa-google"></span> </a>
+    <div class="header">
+      <div class="page_title">
+        <h1> <%= link_to "Welcome to Stack Overflow Clone", root_path, class: "title_text" %> </h1>
       </div>
-    <% end %>
+
+    <div class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "STACK", root_path, class: "navbar-brand" %>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"> <%= link_to questions_path do %>
+                <%= "Questions" %> <span class="sr-only">(current)</span>
+              <% end %></li>
+            <li> <%= link_to "Tags", tags_path %> </li>
+            <li><%= link_to "Users", users_path %></li>
+            <% if logged_in? %>
+              <li> <%= link_to "Ask Question", new_question_path %> </li>
+            <% end %>
+          </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+             <li> <%= link_to "Profile", user_path(current_user) %> </li>
+             <li> <%= link_to 'Signout', signout_path %> </li>
+          <% end %>
+        </ul>
+
+        </div>
+      </div>
+    </div>
   </div>
+
+  <% if !logged_in? %>
+    <div class="login">
+      <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook"> Login with Facebook <span class="fa fa-facebook"></span> </a>
+      <a href="/auth/google_oauth2" class="btn btn-block btn-social btn-google"> Login with Google <span class="fa fa-google"></span> </a>
+    </div>
+  <% end %>
+
+</header>
 
 <%= yield %>
 
