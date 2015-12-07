@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.login {
+  width: 33%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.page_title {
+  margin: 1em;
+  border: 1px solid black;
+}
+
+.title_text {
+  color: #226765;
+}
+
+.header {
+  border: 1px solid black;
+
+}
