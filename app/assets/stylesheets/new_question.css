@@ -1,0 +1,13 @@
+.new_question_container {
+  text-align: center;
+  margin: 1em;
+}
+
+.title_input {
+  width: 50%;
+
+}
+
+.content_input {
+  width: 50%;
+}
