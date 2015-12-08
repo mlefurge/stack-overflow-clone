@@ -11,6 +11,7 @@ class Question < ActiveRecord::Base
   scope :newest, -> { order(created_at: :desc) }
 
   def associate_to_tags!(tag_list)
+    self.tags.clear unless self.tags.empty?
     tag_list.each do |tag_name|
       new_tag = Tag.find_or_create_by(category: tag_name.strip)
       unless self.tags.include?(new_tag)
