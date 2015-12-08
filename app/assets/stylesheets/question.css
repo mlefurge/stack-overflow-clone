@@ -10,6 +10,8 @@
 
 .question_preview {
   margin: 1em;
+  border-bottom: 1px dotted gray;
+  padding-bottom: 1em;
 }
 
 .content_input {
@@ -31,4 +33,5 @@
 .question_info {
   display: inline-block;
   margin: 1em;
+  width: 50em;
 }
