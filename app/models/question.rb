@@ -8,6 +8,8 @@ class Question < ActiveRecord::Base
 
   validates :title, :content, :user_id, presence: true
 
+  scope :newest, -> { order(created_at: :desc) }
+
   def associate_to_tags!(tag_list)
     tag_list.each do |tag_name|
       new_tag = Tag.find_or_create_by(category: tag_name.strip)
