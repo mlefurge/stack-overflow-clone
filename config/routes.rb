@@ -11,13 +11,8 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :questions
-
-
-  resources :users, only: [:show]
-
-  resources :tags, only: [:index]
-  resources :users, only: [:index]
-
+  resources :users, only: [:show, :index]
+  resources :tags
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
