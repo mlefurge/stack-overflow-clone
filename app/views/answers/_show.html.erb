@@ -1,0 +1,25 @@
+
+<div class="answers_show_num_container">
+  <div class="answer_show_votes"></div>
+  <div class="answers_show_num_answers">
+    <%= question.display_answers %>
+  </div>
+</div>
+
+<% question.answers.each do |answer| %>
+  <div class="answer_show_container">
+    <div class="answer_show_votes">
+      <div> UP </div>
+      <div>
+        <span> 0 </span>
+      </div>
+      <div> DOWN </div>
+    </div>
+    <div class="answer_show_contents">
+      <div>
+        <span> <%= answer.content %> </span>
+      </div>
+    </div>
+  </div>
+
+<% end %>
