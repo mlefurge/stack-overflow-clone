@@ -1,0 +1,34 @@
+.new_question_container {
+  text-align: center;
+  margin: 1em;
+}
+
+.title_input {
+  width: 50%;
+
+}
+
+.question_preview {
+  margin: 1em;
+}
+
+.content_input {
+  width: 50%;
+}
+
+.question_votes {
+  display: inline-block;
+  text-align: center;
+  margin: 1em;
+}
+
+.question_answers {
+  display: inline-block;
+  text-align: center;
+  margin: 1em;
+}
+
+.question_info {
+  display: inline-block;
+  margin: 1em;
+}

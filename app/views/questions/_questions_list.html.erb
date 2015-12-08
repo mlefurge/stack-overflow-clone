@@ -1,4 +1,35 @@
 <div class="question_list">
 
+  <% @questions.newest.each do |question| %>
+
+    <div class="question_preview">
+
+      <div class="question_votes">
+        <div class="question_counts">
+          <span> 0 </span>
+        </div>
+        <div> Votes </div>
+      </div>
+
+    <div class="question_answers">
+      <div class="question_counts">
+        <span> 0 </span>
+      </div>
+      <div> Answers </div>
+    </div>
+
+    <div class="question_info">
+      <div class="question_title">
+        <span> <%= link_to question.title, question_path(question) %> </span>
+      </div>
+      <div> Posted By: <%= question.user.name %>, <%= time_ago_in_words(question.created_at) %> ago </div>
+    </div>
+
+  </div>
+
+
+  <% end %>
+
+
 
 </div>
