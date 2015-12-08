@@ -35,3 +35,8 @@
   margin: 1em;
   width: 50em;
 }
+
+.pagination {
+  width: 100%;
+  text-align: center;
+}

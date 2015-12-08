@@ -51,6 +51,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'kaminari'
 end
 
 group :development do
