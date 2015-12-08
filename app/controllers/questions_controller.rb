@@ -31,12 +31,12 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if @question
+    @question.assign_attributes(question_params)
+    if @question.save
       @question.associate_to_tags!(tag_params[:tags].split(","))
-      @question.update_attributes(question_params)
       redirect_to question_path(@question)
     else
-      @errors = question.errors.full_messages
+      @errors = @question.errors.full_messages
       render :edit
     end
   end
