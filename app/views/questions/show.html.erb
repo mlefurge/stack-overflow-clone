@@ -6,7 +6,6 @@
 </div>
 
 <div class="question_show_container">
-
   <div class="question_show_votes">
     <div> UP </div>
     <div>
@@ -14,29 +13,22 @@
     </div>
     <div> DOWN </div>
   </div>
-
   <div class="question_show_contents">
     <div>
       <span> <%= @question.content %> </span>
     </div>
   </div>
-
 </div>
 
 <div class="question_show_container">
-
   <div class="question_show_votes"></div>
-
   <div class="question_show_tags">
-    TEST TAG, TEST TAG, TEST TAG
-    <% @question.tags.each do |tag| %> <span> <%= tag %> </span> <% end %>
+    <% @question.tags.each do |tag| %> <span> <%= link_to tag.category, tag_path(tag), class: "question_show_tag_category" %> </span> <% end %>
   </div>
-
 </div>
 
 
 <div class="question_show_container">
-
   <div class="question_show_votes"></div>
 
   <div class="question_show_comments">
