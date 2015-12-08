@@ -1,3 +1,5 @@
+/*   QUESTION CREATE PAGE    */
+
 .new_question_container {
   text-align: center;
   margin: 1em;
@@ -17,6 +19,8 @@
 .content_input {
   width: 50%;
 }
+
+/*   QUESTION INDEX PAGE    */
 
 .question_votes {
   display: inline-block;
@@ -40,3 +44,42 @@
   width: 100%;
   text-align: center;
 }
+
+/*   QUESTION SHOW PAGE    */
+
+.question_show_title {
+  margin: 1em;
+  padding-bottom: 1em;
+  border-bottom: dotted 1px gray;
+}
+
+.question_show_user {
+  margin-left: 2em;
+}
+
+.question_show_votes {
+  display: inline-block;
+  text-align: center;
+  margin: 1em;
+  width: 5em;
+}
+
+.question_show_contents {
+  display: inline-block;
+  width: 50em;
+  margin: 1em;
+}
+
+.question_show_tags {
+  display: inline-block;
+  width: 50em;
+  margin: 1em;
+}
+
+.question_show_comments {
+  display: inline-block;
+  width: 50em;
+  margin: 1em;
+  padding-top: 0.5em;
+}
+

@@ -19,6 +19,19 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    @question = Question.find(params[:id])
+    # TODO - add @answer and @tags
+  end
+
+
+private
+
+  def question_params
+    params.require(:question).permit(:title, :content)
+  end
+
 
 end
 
