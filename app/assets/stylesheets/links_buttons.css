@@ -15,7 +15,6 @@ a:hover {
 
 .page_title {
   margin: 1em;
-  border: 1px solid black;
 }
 
 .title_text {
@@ -23,6 +22,5 @@ a:hover {
 }
 
 .header {
-  border: 1px solid black;
 
 }
