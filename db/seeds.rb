@@ -28,5 +28,8 @@ questions.each do |question|
   rand(2..5).times do
     question.tags << Tag.find_or_create_by(category: Faker::Lorem.word)
   end
+  rand(1..6).times do
+    question.answers.create!(content: Faker::Lorem.sentence(rand(3..6), true, rand(1..4)), user_id: rand(1..20))
+  end
 end
 
