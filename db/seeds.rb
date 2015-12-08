@@ -18,7 +18,7 @@ end
 
 users.each do |user|
   3.times do
-    Question.create!(title: Faker::Lorem.sentences(rand(1..3)), user_id: user.id, content: Faker::Lorem.paragraphs(rand(1..4)))
+    Question.create!(title: Faker::Lorem.sentence(rand(3..6), true, rand(1..4)), user_id: user.id, content: Faker::Lorem.paragraph(rand(6..12), true, rand(3..6)))
   end
 end
 
