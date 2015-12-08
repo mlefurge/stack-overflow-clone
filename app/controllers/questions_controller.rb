@@ -25,6 +25,22 @@ class QuestionsController < ApplicationController
     # TODO - add @answer
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    @question.assign_attributes(question_params)
+    if @question.save
+      @question.associate_to_tags!(tag_params[:tags].split(","))
+      redirect_to question_path(@question)
+    else
+      @errors = @question.errors.full_messages
+      render :edit
+    end
+  end
+
 
 private
 

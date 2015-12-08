@@ -1,0 +1,8 @@
+
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title, :placeholder => "What's your question? Be specific.", class: "title_input" %></p>
+  <p><%= f.label :content %></p>
+  <p><%= f.text_area :content, :placeholder => "Enter your question here", class: "content_input" %></p>
+  <p><%= f.label :tags %></p>
+  <p><%= f.text_area :tags, :value => "#{@question.tags.map {|tag| tag.category}.join(', ')}", :placeholder => "Enter tags separated by commas!", class: "tags_input" %></p>
+

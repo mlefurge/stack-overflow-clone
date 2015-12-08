@@ -1,7 +1,7 @@
 <div class="question_show_title">
   <h2> <%= @question.title %> </h2>
   <div class="question_show_user">
-    Asked by: <%= @question.user.name %>, <%= time_ago_in_words(@question.created_at) %> ago
+    Asked by: <%= @question.user.name %>, <%= time_ago_in_words(@question.created_at) %> ago <% if logged_in? && @question.user_id == current_user.id  %> <%= link_to "Edit", edit_question_path(@question) %> <% end %>
   </div>
 </div>
 

@@ -22,7 +22,7 @@
       <div class="question_title">
         <span> <%= link_to question.title, question_path(question) %> </span>
       </div>
-      <div> Posted By: <%= question.user.name %>, <%= time_ago_in_words(question.created_at) %> ago </div>
+      <div> Posted By: <%= question.user.name %>, <%= time_ago_in_words(question.created_at) %> ago <% if logged_in? && question.user_id == current_user.id  %> <%= link_to "Edit", edit_question_path(question) %> <% end %></div>
     </div>
 
   </div>
