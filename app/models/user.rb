@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :votes, through: :answers
   has_many :votes, through: :comments
 
-  validates :provider, :uid, presence: true, uniqueness: true
+  validates :provider, :uid, presence: true
 
   def self.from_omniauth(auth)
     u = User.find_or_create_by(provider: auth.provider, uid: auth.uid)
