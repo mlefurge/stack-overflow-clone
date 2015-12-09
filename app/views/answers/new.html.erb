@@ -4,8 +4,7 @@
   <% end %></ul>
 <% end %>
 
-<div class="new_answer_container">
-  <%= form_for @answer, url: question_answers_path(@question) do |f| %>
-  <%= render partial: "form", locals: { f: f } %>
-  <% end %>
-</div>
+<%= form_for @answer, url: question_answers_path(@question) do |f| %>
+<%= render partial: "form", locals: { f: f } %>
+<% end %>
+

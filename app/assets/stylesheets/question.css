@@ -108,6 +108,7 @@
   padding: 1em;
   background-color: #738ca6;
   border-radius: 4px;
+  margin-bottom: 2em;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
   box-shadow:         3px 3px 5px 6px #ccc;
@@ -115,4 +116,12 @@
 
 .question_show_new_answer_text {
   color: white;
+}
+
+.question_show_new_comment_container {
+  display: none;
+}
+
+.new_comment_button {
+  margin: 2em 0 2em 0;
 }
