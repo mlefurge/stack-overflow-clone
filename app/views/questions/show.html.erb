@@ -38,5 +38,13 @@
   <div class="question_show_comments">
     HERE IS A TEST COMMENT
   </div>
+</div>
 
+
+<div class="question_show_answer">
+  <%= render partial: "answers/show", locals: {question: @question} %>
+</div>
+
+<div class="question_show_new_answer">
+  <%= link_to "Add Answer", new_question_answer_path(@question), class: "question_show_new_answer_text" %>
 </div>

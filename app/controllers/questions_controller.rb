@@ -22,7 +22,6 @@ class QuestionsController < ApplicationController
   def show
     @user = current_user
     @question = Question.find(params[:id])
-    # TODO - add @answer
   end
 
   def edit
@@ -49,8 +48,6 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to root_path
   end
-
-
 
 private
 

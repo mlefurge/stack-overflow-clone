@@ -1,0 +1,11 @@
+<% if @errors %>
+  <ul><% @errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %></ul>
+<% end %>
+
+<div class="new_answer_container">
+  <%= form_for @answer, url: question_answer_path(@question, @answer), method: :put do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+  <% end %>
+</div>

@@ -20,4 +20,22 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def display_answers
+    if self.answers.length > 1
+      " #{self.answers.length} Answers"
+    elsif self.answers.length == 1
+      "1 Answer"
+    else
+      "No answers have been submitted."
+    end
+  end
+
+  def answer_count
+    if self.answers.length != 1
+      "Answers"
+    else
+      "Answer"
+    end
+  end
+
 end

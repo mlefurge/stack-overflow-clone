@@ -101,3 +101,18 @@
   padding-top: 0.5em;
 }
 
+.question_show_new_answer {
+  text-align: center;
+  margin: auto;
+  width: 10em;
+  padding: 1em;
+  background-color: #738ca6;
+  border-radius: 4px;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.question_show_new_answer_text {
+  color: white;
+}
