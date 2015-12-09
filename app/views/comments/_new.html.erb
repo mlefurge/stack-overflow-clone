@@ -1,9 +1,9 @@
 <%= form_for Comment.new do |f| %>
-  <p><%= f.label :comment, value: "Say something:" %></p>
+  <p><%= f.label :comment, value: "Type your comment below" %></p>
   <p><%= f.text_area :content %></p>
   <%=f.hidden_field :commentable_type, :value => type.class.name %>
   <%=f.hidden_field :commentable_id, :value => type.id %>
-  <p><%= f.submit "Comment" %></p>
+  <p><%= button_tag "Cancel", class: "cancel_comment", id: "#{type.id}" %> <%= f.submit "Comment" %></p>
 <% end %>
 
 
