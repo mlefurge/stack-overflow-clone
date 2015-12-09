@@ -35,5 +35,9 @@
       <% end %>
     </div>
   </div>
+  <div class="answer_show_comments">
+    <%= render partial: "comments/show", locals: { type: answer } %>
+    <%= render partial: "comments/new", locals: { type: answer } %>
+  </div>
 
 <% end %>

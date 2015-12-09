@@ -38,3 +38,8 @@
 .new_answer_container {
   text-align: center;
 }
+
+.answer_show_comments {
+  display: inline-block;
+  margin-left: 8.5em;
+}
