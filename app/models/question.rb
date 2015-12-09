@@ -30,4 +30,12 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def answer_count
+    if self.answers.length != 1
+      "Answers"
+    else
+      "Answer"
+    end
+  end
+
 end
