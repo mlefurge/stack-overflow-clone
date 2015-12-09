@@ -1,7 +1,7 @@
 
 <div class="answers_show_num_container">
   <div class="answer_show_votes"></div>
-  <div class="answers_show_num_answers">
+  <div class="answer_show_num_answers">
     <%= question.display_answers %>
   </div>
 </div>
@@ -19,6 +19,20 @@
       <div>
         <span> <%= answer.content %> </span>
       </div>
+      <div>
+        Answered by <%= link_to answer.user.name, user_path(answer.user) %>, <%= time_ago_in_words(answer.created_at) %> ago
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="answer_show_votes"></div>
+    <div class="answer_show_edit">
+      <% if logged_in? && answer.user_id == current_user.id  %>
+        <%= link_to "Edit", edit_question_answer_path(question, answer) %> or
+        <%= link_to "Delete", {action: "destroy", id: answer.id }, method: :delete, data: {confirm: "Are you sure you want to delete this answer?"} %>
+        your answer.
+      <% end %>
     </div>
   </div>
 

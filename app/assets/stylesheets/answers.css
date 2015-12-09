@@ -18,8 +18,13 @@
   border-top: 1px dotted gray;
 }
 
-.answers_show_num_answers {
+.answer_show_num_answers {
   display: inline-block;
   font-size: large;
   width: 80%;
+}
+
+.answer_show_edit {
+  display: inline-block;
+
 }
