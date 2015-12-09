@@ -1,1 +1,4 @@
-
+<% question.comments.each do |comment| %>
+  <div class="comment_show_content"><%= comment.content %></div>
+  <div class="comment_show_user"> Commented on by <%= comment.user.name %>, <%= time_ago_in_words(@question.created_at) %> ago </div>
+<% end %>
