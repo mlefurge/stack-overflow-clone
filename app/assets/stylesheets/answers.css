@@ -43,3 +43,12 @@
   display: inline-block;
   margin-left: 8.5em;
 }
+
+.answer_show_new_comment_container{
+  display: none;
+  margin: 1em;
+}
+
+.new_answer_comment_button {
+  margin: 2em 0 2em 0;
+}

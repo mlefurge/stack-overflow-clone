@@ -120,6 +120,7 @@
 
 .question_show_new_comment_container {
   display: none;
+  margin: 1em;
 }
 
 .new_comment_button {

@@ -37,7 +37,10 @@
   </div>
   <div class="answer_show_comments">
     <%= render partial: "comments/show", locals: { type: answer } %>
-    <%= render partial: "comments/new", locals: { type: answer } %>
+    <%= button_tag "Add a comment", class: "new_answer_comment_button", id: "#{answer.id}" %>
+    <div class="answer_show_new_comment_container", id="<%= answer.id %>">
+      <%= render partial: "comments/new", locals: { type: answer } %>
+    </div>
   </div>
 <% end %>
 
