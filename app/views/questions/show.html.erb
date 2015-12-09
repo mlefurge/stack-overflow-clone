@@ -36,13 +36,13 @@
   <div class="question_show_votes"></div>
 
   <div class="question_show_comments">
-    HERE IS A TEST COMMENT
+    <%= render partial: "comments/new", locals: { type: @question } %>
   </div>
 </div>
 
 
 <div class="question_show_answer">
-  <%= render partial: "answers/show", locals: {question: @question} %>
+  <%= render partial: "answers/show", locals: { question: @question } %>
 </div>
 
 <div class="question_show_new_answer">
