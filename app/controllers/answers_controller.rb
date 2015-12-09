@@ -18,9 +18,21 @@ class AnswersController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
   end
 
   def update
+    @user = current_user
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    @answer.assign_attributes(answer_params)
+    if @answer.save
+      redirect_to question_path(@question)
+    else
+      @errors = @answer.errors.full_messages
+      render :edit
+    end
   end
 
   private
