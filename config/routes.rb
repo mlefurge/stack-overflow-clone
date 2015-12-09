@@ -14,9 +14,20 @@ Rails.application.routes.draw do
     resources :answers do
     end
   end
+
+  resources :questions, only: [:show] do
+    resources :comments, only: [:edit] do
+    end
+  end
+
+  resources :answers, only: [:show] do
+    resources :comments, only: [:edit] do
+    end
+  end
+
   resources :users, only: [:show, :index]
   resources :tags, only: [:index, :show]
-  resources :comments, only: [:new, :create]
+  resources :comments
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
