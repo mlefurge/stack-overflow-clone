@@ -1,0 +1,10 @@
+.comment_show_content {
+  border-top: 1px dotted gray;
+  margin: 1em 0 1em 0;
+  padding-top: 0.5em;
+}
+
+.comment_show_user {
+  font-weight: 200;
+  font-size: smaller;
+}
