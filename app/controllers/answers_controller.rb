@@ -35,6 +35,13 @@ class AnswersController < ApplicationController
     end
   end
 
+  def destroy
+    @answer = Answer.includes(:comments).find(params[:id])
+    Comment.destroy_all(:commentable_id => @answer.id, commentable_type: "Answer")
+    @answer.destroy
+    redirect_to question_path(@answer.question)
+  end
+
   private
 
   def answer_params

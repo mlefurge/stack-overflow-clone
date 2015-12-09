@@ -26,5 +26,15 @@
 
 .answer_show_edit {
   display: inline-block;
+}
 
+.answer_show_user {
+  margin-left: 2em;
+  margin-top: 1em;
+  font-weight: 200;
+  font-size: smaller;
+}
+
+.new_answer_container {
+  text-align: center;
 }
