@@ -10,6 +10,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.assign_attributes(comment_params)
+    if @comment.save
+        redirect_to question_path(commented_on)
+    else
+        redirect_to question_path(commented_on)
+    end
+  end
+
   private
 
   def comment_params
@@ -18,6 +32,7 @@ class CommentsController < ApplicationController
 
   def commented_on
     if params[:comment][:commentable_type] == "Question"
+      byebug
       return @comment.commentable_id
     else
       return @comment.commentable.question.id

@@ -1,4 +1,6 @@
 <% type.comments.each do |comment| %>
   <div class="comment_show_content"><%= comment.content %></div>
-  <div class="comment_show_user"> Commented on by <%= link_to comment.user.name, user_path(comment.user) %>, <%= time_ago_in_words(comment.created_at) %> ago </div>
+  <div class="comment_show_user">
+    Commented on by <%= link_to comment.user.name, user_path(comment.user) %>, <%= time_ago_in_words(comment.created_at) %> ago
+  </div>
 <% end %>
