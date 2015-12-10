@@ -6,7 +6,7 @@
 
       <div class="question_votes">
         <div class="question_counts">
-          <span> 0 </span>
+          <span> <%= question.votes.sum(:value) %> </span>
         </div>
         <div> Votes </div>
       </div>
