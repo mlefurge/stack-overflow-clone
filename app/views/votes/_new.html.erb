@@ -1,0 +1,6 @@
+<%= f.hidden_field :value, :value => value %>
+<%= f.hidden_field :votable_type, :value => type.class.name %>
+<%= f.hidden_field :votable_id, :value => type.id %>
+<% if logged_in? %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+<% end %>
