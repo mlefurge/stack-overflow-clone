@@ -1,0 +1,12 @@
+<div class="tag_show_container">
+
+  <h2><span class="tag_show_category">  All Tags </span> </h2>
+
+  <% @tags.each do |tag| %>
+  <div class="tag_index_container">
+    <div class="tag_index_title"> <%= link_to tag.category, tag_path(tag), class: "tag_index_title_link" %> </div>
+    <div class="tag_index_info"> Questions with <%= link_to tag.category, tag_path(tag) %> tag : <%= link_to tag.questions.count, tag_path(tag) %> </div>
+  </div>
+
+  <% end %>
+</div>

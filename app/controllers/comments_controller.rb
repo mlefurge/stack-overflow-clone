@@ -32,7 +32,6 @@ class CommentsController < ApplicationController
 
   def commented_on
     if params[:comment][:commentable_type] == "Question"
-      byebug
       return @comment.commentable_id
     else
       return @comment.commentable.question.id
