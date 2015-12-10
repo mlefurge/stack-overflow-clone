@@ -10,19 +10,27 @@
   <div class="answer_show_container">
     <div class="answer_show_votes">
       <div>
-      <%= form_for Vote.new do |f| %>
-        <%= render partial: "votes/new", layout: false, locals: { f: f, type: answer, value: 1 } %>
-        <%= image_submit_tag("upvote.png", class: 'vote_icon') %>
-      <% end %>
+        <% if !up_voted_already?(answer) %>
+          <%= form_for Vote.new do |f| %>
+            <%= render partial: "votes/new", layout: false, locals: { f: f, type: answer, value: 1 } %>
+            <%= image_submit_tag("upvote.png", class: 'vote_icon') %>
+          <% end %>
+        <% else %>
+          <%= image_tag("upvote_voted.png", class: 'vote_icon') %>
+        <% end %>
       </div>
       <div>
         <span> <%= answer.votes.sum(:value) %> </span>
       </div>
       <div>
-      <%= form_for Vote.new do |f| %>
-        <%= render partial: "votes/new", layout: false, locals: { f: f, type: answer, value: -1 } %>
-        <%= image_submit_tag("downvote.png", class: 'vote_icon') %>
-      <% end %>
+        <% if !down_voted_already?(answer) %>
+          <%= form_for Vote.new do |f| %>
+          <%= render partial: "votes/new", layout: false, locals: { f: f, type: answer, value: -1 } %>
+          <%= image_submit_tag("downvote.png", class: 'vote_icon') %>
+          <% end %>
+        <% else %>
+          <%= image_tag("downvote_voted.png", class: 'vote_icon') %>
+        <% end %>
       </div>
     </div>
     <div class="answer_show_contents">
