@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :tags, only: [:index, :show]
   resources :comments
+  resources :votes, only: [:new, :create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
