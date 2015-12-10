@@ -12,18 +12,26 @@
 <div class="question_show_container">
   <div class="question_show_votes">
     <div>
+      <% if !up_voted_already?(@question) %>
       <%= form_for Vote.new do |f| %>
         <%= render partial: "votes/new", layout: false, locals: { f: f, type: @question, value: 1 } %>
         <%= image_submit_tag("upvote.png", class: 'vote_icon') %>
+        <% end %>
+      <% else %>
+        <%= image_tag("upvote_voted.png", class: 'vote_icon') %>
       <% end %>
     </div>
     <div>
       <span> <%= @question.votes.sum(:value) %> </span>
     </div>
     <div>
-      <%= form_for Vote.new do |f| %>
-        <%= render partial: "votes/new", layout: false, locals: { f: f, type: @question, value: -1 } %>
-        <%= image_submit_tag("downvote.png", class: 'vote_icon') %>
+      <% if !down_voted_already?(@question) %>
+        <%= form_for Vote.new do |f| %>
+          <%= render partial: "votes/new", layout: false, locals: { f: f, type: @question, value: -1 } %>
+          <%= image_submit_tag("downvote.png", class: 'vote_icon') %>
+        <% end %>
+      <% else %>
+        <%= image_tag("downvote_voted.png", class: 'vote_icon') %>
       <% end %>
     </div>
   </div>
