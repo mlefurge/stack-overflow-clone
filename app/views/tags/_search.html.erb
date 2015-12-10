@@ -1,0 +1,4 @@
+<%= form_tag(tags_path, :method => "get", id: "tag_search_form") do %>
+  <%= text_field_tag :search, params[:search], id: "search_box", placeholder: "Search By Tag" %>
+  <%= submit_tag "Search", id: "tag_search_button" %>
+<% end %>

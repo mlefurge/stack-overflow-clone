@@ -35,6 +35,10 @@
   font-size: smaller;
 }
 
+.tag_index_header {
+  display: inline-block;
+}
+
 .tag_index_container {
   width: 25%;
   height: 10em;
