@@ -17,6 +17,15 @@ class User < ActiveRecord::Base
     u
   end
 
+  def questions_answered
+    answers = self.answers
+    @questions_answered = []
+    answers.each do |answer|
+      @questions_answered << answer.question
+    end
+    @questions_answered
+  end
+
   private
 
   def provider_params

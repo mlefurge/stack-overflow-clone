@@ -1,0 +1,34 @@
+<div class="question_list">
+
+  <% questions.each do |question| %>
+
+    <div class="question_preview">
+
+      <div class="question_votes">
+        <div class="question_counts">
+          <span> <%= question.votes.sum(:value) %> </span>
+        </div>
+        <div> Votes </div>
+      </div>
+
+    <div class="question_answers">
+      <div class="question_counts">
+        <span> <%= question.answers.length %> </span>
+      </div>
+      <div> <%= question.answer_count %> </div>
+    </div>
+
+    <div class="question_info">
+      <div class="question_title">
+        <span> <%= link_to question.title, question_path(question) %> </span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <% end %>
+
+
+
+</div>

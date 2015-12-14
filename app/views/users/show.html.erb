@@ -1,0 +1,15 @@
+<div class="user_show_header">
+  <h1> <%= current_user.name %>'s Profile </h1>
+</div>
+
+<div class="question_list_container">
+  <h3> Your Questions: </h3>
+  <%= render partial: "user_questions", locals: {questions: @questions} %>
+</div>
+
+<div class="question_list_container">
+  <h3> You Answered These Questions: </h3>
+  <%= render partial: "user_questions", locals: {questions: @questions_answered} %>
+</div>
+
+
