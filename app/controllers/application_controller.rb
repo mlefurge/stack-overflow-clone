@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def up_voted_already?(type)
     votes = type.votes.all
-    if votes.exists?(:user_id => current_user.id)
+    if logged_in? && votes.exists?(:user_id => current_user.id)
       votes.where(:user_id => current_user.id).sum(:value) > 0
     else
       false
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def down_voted_already?(type)
     votes = type.votes.all
-    if votes.exists?(:user_id => current_user.id)
+    if logged_in? && votes.exists?(:user_id => current_user.id)
       votes.where(:user_id => current_user.id).sum(:value) < 0
     else
       false

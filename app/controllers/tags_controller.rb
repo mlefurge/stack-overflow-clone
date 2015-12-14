@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @sorted_tags = Tag.sort_tags(Tag.all)[0..14]
+    @tags = Tag.order(questions_count: :desc).limit(15)
     if params[:search]
       search_tag = Tag.search(params[:search])
       if search_tag.count == 0

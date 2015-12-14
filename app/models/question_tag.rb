@@ -1,4 +1,4 @@
 class QuestionTag < ActiveRecord::Base
   belongs_to :question
-  belongs_to :tag
+  belongs_to :tag, counter_cache: :questions_count
 end

@@ -9,8 +9,4 @@ class Tag < ActiveRecord::Base
     where("category LIKE ?", "#{search_tag}")
   end
 
-  def self.sort_tags(list)
-    list.sort_by { |tag| -1 * tag.questions.count }
-  end
-
 end
