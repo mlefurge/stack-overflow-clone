@@ -1,0 +1,12 @@
+<div class="users_show_sorted">
+<% users.each do |user| %>
+<div class="user_container">
+  <p> <%= link_to user.name, user_path(user) %> </p>
+  <p> Questions Asked: <%= user.questions_count %> </p>
+  <p> Questions Answered: <%= user.answers_count %> </p>
+  <% if user.questions %>
+  <p> Last Asked:  </p>
+  <% end %>
+</div>
+<% end %>
+</div>

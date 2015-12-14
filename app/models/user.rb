@@ -26,6 +26,15 @@ class User < ActiveRecord::Base
     @questions_answered
   end
 
+  def self.recently_asked
+    questions = Question.order(updated_at: :desc)
+    @recently_asked = []
+    questions.each do |question|
+      @recently_asked << question.user
+    end
+    @recently_asked.uniq![0..14]
+  end
+
   private
 
   def provider_params
