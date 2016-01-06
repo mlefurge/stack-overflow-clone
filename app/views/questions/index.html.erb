@@ -1,4 +1,13 @@
-<%= render  "questions_list", layout: false %>
+<div class="sort_selection">
+  <h3> Sort By: </h3>
+    <%= link_to "By Upvotes", "/questions/top?sort=votes", class: "question_sort_link" %>
+    <%= link_to "Answers Provided", "/questions/top?sort=answers", class: "question_sort_link" %>
+    <%= link_to "Recently Asked", "/questions/top?sort=recent", class: "question_sort_link" %>
+</div>
+
+<div class="questions_show_sorted">
+  <%= render partial: "questions_list", layout: false %>
+</div>
 
 <div class="pagination">
   <%= paginate @questions  %>

@@ -10,6 +10,15 @@
 
 }
 
+.question_sort_link {
+  background-color: #4B698B;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin: 0.5em;
+  padding: 0.33em;
+}
+
 .question_preview {
   margin: 1em;
   border-bottom: 1px dotted gray;
@@ -126,3 +135,4 @@
 .new_comment_button {
   margin: 2em 0 2em 0;
 }
+

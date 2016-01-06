@@ -49,6 +49,18 @@ class QuestionsController < ApplicationController
     redirect_to root_path
   end
 
+  def top
+    case params[:sort]
+    when "votes"
+      @questions = Question.sort_by_votes
+    when "answers"
+      @questions = Question.where.not(answers_count: nil).order(answers_count: :desc)
+    when "recent"
+      @questions = Question.order(created_at: :desc)
+    end
+    render partial: 'questions_list', layout: false
+  end
+
 private
 
   def question_params

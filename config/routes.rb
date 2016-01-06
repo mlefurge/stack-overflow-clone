@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'users/top', to: 'users#top'
+  get 'questions/top', to: 'questions#top'
 
   resources :questions do
     resources :answers do
