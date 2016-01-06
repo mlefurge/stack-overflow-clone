@@ -23,6 +23,12 @@ users.each do |user|
   end
 end
 
+users.each do |user|
+  questions.each do |question|
+    Vote.create!(votable_type: "Question", votable_id: question.id, user_id: user.id, value: rand(-1..1))
+  end
+end
+
 
 questions.each do |question|
   rand(2..5).times do
