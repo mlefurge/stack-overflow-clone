@@ -16,7 +16,7 @@
     <h3> Questions Answered: </h3>
     <%= render partial: "user_questions", locals: {questions: @questions_answered} %>
   <% else %>
-    <h3> You have not asked any questions yet. <%= link_to "Search", root_path %> for a question to answer. </h3>
+    <h3> You have not answered any questions yet. <%= link_to "Search", root_path %> for a question to answer. </h3>
   <% end %>
 </div>
 
