@@ -3,13 +3,21 @@
 </div>
 
 <div class="question_list_container">
-  <h3> Questions Asked: </h3>
-  <%= render partial: "user_questions", locals: {questions: @questions} %>
+  <% if @user.questions.any? %>
+    <h3> Questions Asked: </h3>
+    <%= render partial: "user_questions", locals: {questions: @questions} %>
+  <% else %>
+    <h3> You have not asked any questions yet. <%= link_to "Ask", new_question_path %> a question now.</h3>
+  <% end %>
 </div>
 
 <div class="question_list_container">
-  <h3> Questions Answered: </h3>
-  <%= render partial: "user_questions", locals: {questions: @questions_answered} %>
+  <% if @user.answers.any? %>
+    <h3> Questions Answered: </h3>
+    <%= render partial: "user_questions", locals: {questions: @questions_answered} %>
+  <% else %>
+    <h3> You have not asked any questions yet. <%= link_to "Search", root_path %> for a question to answer. </h3>
+  <% end %>
 </div>
 
 
