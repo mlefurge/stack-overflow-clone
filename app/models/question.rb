@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
   has_many :question_tags

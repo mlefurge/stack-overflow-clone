@@ -1,0 +1,10 @@
+<div class="sort_selection">
+<h3> Sort By: </h3>
+  <%= link_to "Questions Asked", "/users/top?sort=questions", class: "user_sort_link" %>
+  <%= link_to "Answers Provided", "/users/top?sort=answers", class: "user_sort_link" %>
+  <%= link_to "Recently Active", "/users/top?sort=recent", class: "user_sort_link" %>
+</div>
+
+<div class="users_show_sorted">
+  <%= render partial: 'top', layout: false, locals: { users: @users } %>
+</div>
