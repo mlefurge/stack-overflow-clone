@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151204222549) do
     t.integer  "question_id",                 null: false
     t.integer  "user_id",                     null: false
     t.boolean  "best",        default: false, null: false
+    t.integer  "votes_count"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end

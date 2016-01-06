@@ -8,6 +8,7 @@
 
 users = []
 questions = []
+answers = []
 
 10.times do
   users << User.create!(provider: "Google", uid: Faker::Number.number(6), name: Faker::Name.name)
@@ -23,11 +24,6 @@ users.each do |user|
   end
 end
 
-users.each do |user|
-  questions.each do |question|
-    Vote.create!(votable_type: "Question", votable_id: question.id, user_id: user.id, value: rand(-1..1))
-  end
-end
 
 
 questions.each do |question|
@@ -35,7 +31,18 @@ questions.each do |question|
     question.tags << Tag.find_or_create_by(category: Faker::Lorem.word)
   end
   rand(1..6).times do
-    question.answers.create!(content: Faker::Lorem.sentence(rand(3..6), true, rand(1..4)), user_id: rand(1..20))
+    answers << question.answers.create!(content: Faker::Lorem.sentence(rand(3..6), true, rand(1..4)), user_id: rand(1..20))
   end
 end
 
+users.each do |user|
+  questions.each do |question|
+    Vote.create!(votable_type: "Question", votable_id: question.id, user_id: user.id, value: rand(-1..1))
+    # question.answers.each do |answer|
+    #   Vote.create!(votable_type: "Answer", votable_id: answer.id, user_id: user.id, value: rand(-1..1))
+    # end
+  end
+  answers.each do |answer|
+    Vote.create!(votable_type: "Answer", votable_id: answer.id, user_id: user.id, value: rand(-1..1))
+  end
+end
