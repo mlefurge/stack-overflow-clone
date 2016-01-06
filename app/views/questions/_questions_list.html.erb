@@ -1,40 +1,38 @@
-<div class="question_list">
+<div class="questions_show_sorted">
 
-  <% @questions.newest.each do |question| %>
+  <div class="question_list">
 
-    <div class="question_preview">
+    <% @questions.each do |question| %>
 
-      <div class="question_votes">
-        <div class="question_counts">
-          <span> <%= question.votes.sum(:value) %> </span>
+      <div class="question_preview">
+
+        <div class="question_votes">
+          <div class="question_counts">
+            <span> <%= question.votes.sum(:value) %> </span>
+          </div>
+          <div> Votes </div>
         </div>
-        <div> Votes </div>
+
+      <div class="question_answers">
+        <div class="question_counts">
+          <span> <%= question.answers.length %> </span>
+        </div>
+        <div> <%= question.answer_count %> </div>
       </div>
 
-    <div class="question_answers">
-      <div class="question_counts">
-        <span> <%= question.answers.length %> </span>
+      <div class="question_info">
+        <div class="question_title">
+          <span> <%= link_to question.title, question_path(question) %> </span>
+        </div>
+        <div> Posted By: <%= question.user.name %>, <%= time_ago_in_words(question.created_at) %> ago
+          <% if logged_in? && question.user_id == current_user.id  %>
+            | <%= link_to "Edit", edit_question_path(question) %> or
+            <%= link_to "Delete", {action: "destroy", id: question.id }, method: :delete, data: {confirm: "Are you sure you want to delete this question?"} %>
+          <% end %>
+        </div>
       </div>
-      <div> <%= question.answer_count %> </div>
     </div>
-
-    <div class="question_info">
-      <div class="question_title">
-        <span> <%= link_to question.title, question_path(question) %> </span>
-      </div>
-      <div> Posted By: <%= question.user.name %>, <%= time_ago_in_words(question.created_at) %> ago
-        <% if logged_in? && question.user_id == current_user.id  %>
-          | <%= link_to "Edit", edit_question_path(question) %> or
-          <%= link_to "Delete", {action: "destroy", id: question.id }, method: :delete, data: {confirm: "Are you sure you want to delete this question?"} %>
-        <% end %>
-      </div>
-    </div>
-
+    <% end %>
   </div>
-
-
-  <% end %>
-
-
 
 </div>

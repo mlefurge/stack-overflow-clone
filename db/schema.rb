@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151204222549) do
     t.integer  "question_id",                 null: false
     t.integer  "user_id",                     null: false
     t.boolean  "best",        default: false, null: false
+    t.integer  "votes_count"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
@@ -45,11 +46,13 @@ ActiveRecord::Schema.define(version: 20151204222549) do
   add_index "question_tags", ["tag_id"], name: "index_question_tags_on_tag_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.integer  "user_id",    null: false
-    t.text     "content",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",         null: false
+    t.integer  "user_id",       null: false
+    t.text     "content",       null: false
+    t.integer  "answers_count"
+    t.integer  "votes_count"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "tags", force: :cascade do |t|

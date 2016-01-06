@@ -30,6 +30,10 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def self.sort_by_votes
+    @questions = joins(:votes).group('questions.id').order('sum(votes.value) desc').limit(25)
+  end
+
   def answer_count
     if self.answers.length != 1
       "Answers"

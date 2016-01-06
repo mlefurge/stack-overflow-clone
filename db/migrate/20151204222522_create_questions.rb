@@ -4,6 +4,8 @@ class CreateQuestions < ActiveRecord::Migration
       t.string   :title, null: false
       t.integer  :user_id, null: false
       t.text     :content, null: false
+      t.integer  :answers_count
+      t.integer  :votes_count
 
       t.timestamps null: false
     end
